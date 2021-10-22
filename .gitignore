@@ -1,0 +1,8 @@
+# general
+.DS_Store
+yarn-error.log*
+node_modules
+.cache
+
+# ide
+.idea
