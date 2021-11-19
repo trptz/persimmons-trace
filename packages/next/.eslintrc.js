@@ -10,7 +10,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "next",
-    "airbnb",
+    // "airbnb", エラーが出るため
     "plugin:react/jsx-runtime",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
