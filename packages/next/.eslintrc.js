@@ -20,4 +20,4 @@ module.exports = {
     "./configs/eslint/ts",
     "prettier",
   ],
-}
+};

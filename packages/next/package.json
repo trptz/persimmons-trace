@@ -1,25 +1,5 @@
 {
   "name": "next",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "check-all": "run-s fix check-code test",
-    "check-code": "run-p spell-check lint type-check",
-    "fix": "run-p fix:*",
-    "fix-ts-by-eslint": "eslint \"./src/**/*.{ts,tsx}\" --fix",
-    "fix-ts-by-prettier": "prettier \"./src/**/*.{ts,tsx}\" --write",
-    "fix:config": "prettier \"./*.{js,json}\" \"./**/*.js\" --write",
-    "fix:pack": "fixpack",
-    "fix:ts": "run-s fix-ts-by-eslint fix-ts-by-prettier",
-    "lint": "run-p lint:*",
-    "lint:ts": "eslint \"./src/**/*.{ts,tsx}\"",
-    "ts-unused-exports": "ts-unused-exports ./tsconfig.json --searchNamespaces",
-    "spell-check": "cspell \"./src/**/*.{ts,tsx}\"",
-    "test": "echo \"jest は cli の表示をリセットしてしまうため、 check-all の後ろに直列でつなげる\"",
-    "type-check": "tsc"
-  },
   "dependencies": {
     "next": "12.0.2",
     "react": "17.0.2",
@@ -43,5 +23,25 @@
     "prettier-plugin-organize-imports": "^2.3.4",
     "ts-unused-exports": "^7.0.3",
     "typescript": "4.4.4"
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "check-all": "run-s fix check-code test",
+    "check-code": "run-p spell-check lint type-check",
+    "dev": "next dev",
+    "fix": "run-p fix:*",
+    "fix-ts-by-eslint": "eslint \"./src/**/*.{ts,tsx}\" --fix",
+    "fix-ts-by-prettier": "prettier \"./src/**/*.{ts,tsx}\" --write",
+    "fix:config": "prettier \"./*.{js,json}\" \"./**/*.js\" --write",
+    "fix:pack": "fixpack",
+    "fix:ts": "run-s fix-ts-by-eslint fix-ts-by-prettier",
+    "lint": "run-p lint:*",
+    "lint:ts": "eslint \"./src/**/*.{ts,tsx}\"",
+    "spell-check": "cspell \"./src/**/*.{ts,tsx}\"",
+    "start": "next start",
+    "test": "echo \"jest は cli の表示をリセットしてしまうため、 check-all の後ろに直列でつなげる\"",
+    "ts-unused-exports": "ts-unused-exports ./tsconfig.json --searchNamespaces",
+    "type-check": "tsc"
   }
 }
