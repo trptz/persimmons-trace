@@ -1,4 +1,4 @@
-const { WARN, ERROR, OFF } = require("./const")
+const { WARN, ERROR, OFF } = require("./const");
 
 module.exports = {
   parser: "@typescript-eslint/parser",
@@ -56,4 +56,4 @@ module.exports = {
       },
     },
   },
-}
+};
