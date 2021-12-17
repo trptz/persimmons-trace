@@ -7,6 +7,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@storybook/addon-viewport": "^6.4.9",
     "@storybook/react": "6.4.0-beta.8",
     "@storybook/testing-react": "1.0.0-next.0",
     "@stylelint/postcss-css-in-js": "^0.37.2",
@@ -34,9 +35,14 @@
     "fixpack": "^4.0.0",
     "jest": "^27.4.4",
     "npm-run-all": "^4.1.5",
+    "open-cli": "^7.0.1",
     "prettier": "^2.4.1",
     "prettier-plugin-organize-imports": "^2.3.4",
     "react-test-renderer": "^17.0.2",
+    "reg-keygen-git-hash-plugin": "^0.11.1",
+    "reg-suit": "^0.11.1",
+    "shx": "^0.3.3",
+    "storycap": "^3.1.0",
     "stylelint": "13.13.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "22.0.0",
@@ -69,6 +75,15 @@
     "storybook": "start-storybook -p 6006 -s public",
     "test": "jest",
     "ts-unused-exports": "ts-unused-exports ./tsconfig.json --searchNamespaces",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "compare-story": "run-s -c ss:capture reg-suit:save reg-suit:open",
+    "reg-suit:open": "open-cli \"./report.html\"",
+    "reg-suit:save": "reg-cli \"./.screenshot/actual\" \"./.screenshot/expected\" \"./.screenshot/diff\" -R \"./report.html\"",
+    "ss:capture": "storycap http://localhost:6006 -o \".screenshot/actual\"",
+    "ss:copy": "shx cp -r \"./.screenshot/actual/*\" \"./.screenshot/expected\"",
+    "ss:git-add": "git add \"./.screenshot/expected\"",
+    "ss:git-commit": "git commit -m \"docs: update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
+    "ss:remove": "shx rm -rf \"./.screenshot/expected/*\"",
+    "update-ss": "run-s ss:remove ss:copy ss:git-add ss:git-commit"
   }
 }
