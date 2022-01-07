@@ -1,0 +1,13 @@
+{
+  "name": "persimmons-trace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tiropetz/persimmons-trace.git",
+  "author": "Kentaro Matsutani <tiropetz@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
+    "husky": "^7.0.4"
+  }
+}
