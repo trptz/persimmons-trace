@@ -33,6 +33,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-unicorn": "^38.0.1",
     "fixpack": "^4.0.0",
+    "hygen": "^6.1.0",
     "jest": "^27.4.4",
     "npm-run-all": "^4.1.5",
     "open-cli": "^7.0.1",
@@ -84,6 +85,8 @@
     "ss:git-add": "git add \"./.screenshot/expected\"",
     "ss:git-commit": "git commit -m \"docs: update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
     "ss:remove": "shx rm -rf \"./.screenshot/expected/*\"",
-    "update-ss": "run-s ss:remove ss:copy ss:git-add ss:git-commit"
+    "update-ss": "run-s ss:remove ss:copy ss:git-add ss:git-commit",
+    "new:fc": "hygen new functional-component",
+    "new:pc": "hygen new pages-component"
   }
 }
