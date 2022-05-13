@@ -1,6 +1,8 @@
 {
   "name": "next",
   "dependencies": {
+    "@aspida/axios": "^1.9.1",
+    "axios": "^0.26.1",
     "next": "12.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -37,6 +39,7 @@
     "jest": "^27.4.4",
     "npm-run-all": "^4.1.5",
     "open-cli": "^7.0.1",
+    "openapi2aspida": "^0.19.0",
     "prettier": "^2.4.1",
     "prettier-plugin-organize-imports": "^2.3.4",
     "react-test-renderer": "^17.0.2",
@@ -87,6 +90,10 @@
     "ss:remove": "shx rm -rf \"./.screenshot/expected/*\"",
     "update-ss": "run-s ss:remove ss:copy ss:git-add ss:git-commit",
     "new:fc": "hygen new functional-component",
-    "new:pc": "hygen new pages-component"
-  }
+    "new:pc": "hygen new pages-component",
+    "openapi": "run-p openapi:*",
+    "openapi:api1": "run-s api:init api:gen",
+    "api1:init": "rm -rf lib/api/sample",
+      "api1:gen": "openapi2aspida -i=./../strapi/extensions/documentation/documentation/1.0.0/full_documentation.json -o=lib/api/sample"
+   }
 }
