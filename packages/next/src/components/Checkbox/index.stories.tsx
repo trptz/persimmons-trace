@@ -1,7 +1,7 @@
 import { StoryObj } from "@storybook/react";
 import { screen } from "@testing-library/react";
-import { Checkbox } from ".";
 import userEvent from "@testing-library/user-event";
+import { Checkbox } from "./index";
 
 export default {
   component: Checkbox,
@@ -23,4 +23,3 @@ export const Checked = {
     await userEvent.click(screen.getByText("Check!!!"));
   },
 };
-
