@@ -1,23 +1,30 @@
+import Link from "next/link";
 import { VFC } from "react";
 import styled from "styled-components";
 import { Colors } from "../../shared/const/colors";
 import { CardProps } from "./types";
 
-export const Card: VFC<CardProps> = (props) => {
+export const Card: VFC<CardProps> = ({
+  articleId,
+  eyeCatchImg,
+  publicationDate,
+  viewPublicationDate,
+  title,
+  description,
+}) => {
   return (
-    <Wrapper>
-      <FlexRow>
-        <EyeCatchImg src="http://placehold.jp/3d4070/ffffff/150x150.png" />
-      </FlexRow>
-      <PublicationDate dateTime="2018/07/07" />
-      <ArticleTitle>
-        【雀魂】脱初心者！最速雀豪昇段ガイド 2局目 初心から雀士へ
-      </ArticleTitle>
-      <ArticleDescription>
-        【雀魂】じゃんたま脱初心者！最速雀豪昇段ガイド2局目
-        麻雀を初めたばかりの初心者が雀士へ昇段するために必要な技術について解説します。
-      </ArticleDescription>
-    </Wrapper>
+    <Link href={`/article/${articleId}`}>
+      <Wrapper>
+        <FlexRow>
+          <EyeCatchImg src={eyeCatchImg} />
+        </FlexRow>
+        <PublicationDate dateTime={publicationDate}>
+          {viewPublicationDate}
+        </PublicationDate>
+        <ArticleTitle>{title}</ArticleTitle>
+        <ArticleDescription>{description}</ArticleDescription>
+      </Wrapper>
+    </Link>
   );
 };
 
