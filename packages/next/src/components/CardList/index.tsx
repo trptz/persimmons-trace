@@ -8,7 +8,9 @@ export const CardList: VFC<CardListProps> = ({ cards }) => {
     <Wrapper>
       <Grid>
         {cards.map((card) => (
-          <Card key={card.articleId} {...card} />
+          <li key={card.articleId}>
+            <Card {...card} />
+          </li>
         ))}
       </Grid>
     </Wrapper>
@@ -19,7 +21,7 @@ const Wrapper = styled.div`
   padding: 15px;
 `;
 
-const Grid = styled.div`
+const Grid = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 `;

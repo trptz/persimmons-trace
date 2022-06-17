@@ -9,7 +9,7 @@ const meta: Meta<ComponentProps<CardListType>> = {
   component: CardList,
   args: {
     cards: Array(10).fill(0).map((_, index) => ({
-      articleId: `$123${index}`,
+      articleId: `123${index}`,
       eyeCatchImg: "http://placehold.jp/3d4070/ffffff/150x150.png",
       publicationDate: "2018-07-07",
       viewPublicationDate: "2018/07/07",

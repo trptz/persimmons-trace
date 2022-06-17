@@ -28,8 +28,16 @@ export const Card: VFC<CardProps> = ({
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.a`
+  display: block;
+  cursor: pointer;
   padding: 15px;
+
+  transition: box-shadow 0.3s, transform 0.3s;
+  :hover {
+    box-shadow: 0 0 10px 3px #e0e4e4;
+    transform: translateY(-2px);
+  }
 `;
 
 const FlexRow = styled.div`

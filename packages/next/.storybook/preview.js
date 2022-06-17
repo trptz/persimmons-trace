@@ -1,7 +1,10 @@
 // media query 等でのレスポンシブもテストしたい場合
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { addDecorator } from "@storybook/react";
 import { RouterContext } from "next/dist/shared/lib/router-context";
+import { Fragment } from "react";
 import { withScreenshot } from "storycap";
+import { GlobalStyle } from "../src/styles/globalStyle";
 
 export const decorators = [withScreenshot];
 
@@ -20,3 +23,10 @@ export const parameters = {
     Provider: RouterContext.Provider,
   },
 };
+
+addDecorator((storyFn) => (
+  <Fragment>
+    <GlobalStyle />
+    {storyFn()}
+  </Fragment>
+));
